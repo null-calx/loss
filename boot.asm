@@ -1,44 +1,22 @@
+	[org 0x7C00]
+
 	mov ah, 0x0E		; switch to teletype mode
-	mov al, 'H'
+	mov bx, str
+
+loop:
+	mov al, [bx]
+	cmp al, 0
+	je exit
+
 	int 0x10
 
-	mov al, 'e'
-	int 0x10
+	inc bx
+	jmp loop
 
-	mov al, 'l'
-	int 0x10
-
-	mov al, 'l'
-	int 0x10
-
-	mov al, 'o'
-	int 0x10
-
-	mov al, ','
-	int 0x10
-
-	mov al, ' '
-	int 0x10
-
-	mov al, 'W'
-	int 0x10
-
-	mov al, 'o'
-	int 0x10
-
-	mov al, 'r'
-	int 0x10
-
-	mov al, 'l'
-	int 0x10
-
-	mov al, 'd'
-	int 0x10
-
-	mov al, '!'
-	int 0x10
-
+exit:	
 	jmp $
+
+str:	db "Hello, world!", 0
 
 	times 510 - ($-$$) db 0
 	db 0x55, 0xAA
