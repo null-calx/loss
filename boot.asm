@@ -22,6 +22,8 @@ number_loop:
 str:	db "Hello, world!", 0
 newline:db 10, 13, 0
 space:	db ' ', 0
+print_number_buffer:
+	times 6 db 0
 
 ;;; si = byte
 print_number:
@@ -36,10 +38,6 @@ print_number_loop:
 	mov	[bx], dl
 	cmp	ax, 0
 	jne	print_number_loop
-print_number_exit:
-	jmp	print_string
-print_number_buffer:
-	times 6 db 0
 
 ;;; bx = *cstring
 print_string:
