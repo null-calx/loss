@@ -1,0 +1,10 @@
+#+TITLE: is this loss?
+#+AUTHOR: calx
+
+LOSS : Learning Operation System [insert word]
+
+| \vert       | \vert \vert |
+|-------------+-------------|
+| \vert \vert | \vert _     |
+
+[[https://www.youtube.com/playlist?list=PLm3B56ql_akNcvH8vvJRYOc7TbYhRs19M][Making an OS (x86)]] - youtube series
